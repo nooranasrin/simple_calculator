@@ -8,7 +8,7 @@ const sum = function(start, end, incriment) {
   return sum;
 };
 
-const getGreaterAndEqual = function(threshold, element) {
+const isGreaterAndEqual = function(threshold, element) {
   return element >= threshold;
 };
 
@@ -22,8 +22,36 @@ const fibnacci = function(start, end) {
     current = next;
     next = sum;
   }
-  return fibNos.filter(getGreaterAndEqual.bind(null,startRange));
+  return fibNos.filter(isGreaterAndEqual.bind(null,startRange));
+};
+
+const isPrime = function(num) {
+  let  reminder;
+  if(num >= 2 ) {
+    for(let denominator = 2;denominator < num ; denominator++) {
+      reminder = num % denominator;
+      if(reminder == 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+  return false;
+};
+
+const prime = function(start, end) {
+  let primes = [],i; 
+  if(!(start > end || (start < 0 && end < 0))) {
+    let numbers = Array.from(Array(end), (_,i) => i+1).slice(2);
+    primes = numbers.filter(isPrime);
+    primes.unshift(2);
+    primes = primes.filter(isGreaterAndEqual.bind(null,start));
+  }
+  return primes;
 };
 
 exports.sum = sum;
 exports.fibnacci = fibnacci;
+exports.prime = prime;
+exports.isPrime = isPrime;
+exports.isGreaterAndEqual = isGreaterAndEqual;
