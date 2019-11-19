@@ -7,19 +7,19 @@ const isGreaterAndEqual = require('../src/operations.js').isGreaterAndEqual;
 
 describe('testSum',function() {
   it('should return sum if both ranges are positive numbers', function() {
-    assert.strictEqual(sum(1,2,1),3);
+    assert.deepStrictEqual(sum(1,2,1),[3]);
   });
   it('should return sum if one positive range and one negative range', function() {
-    assert.strictEqual(sum(1,-10,1),-54);
+    assert.deepStrictEqual(sum(1,-10,1),[-54]);
   });
   it('should return sum if both of the ranges are negative', function() {
-    assert.strictEqual(sum(-2,-4,1),-9);
+    assert.deepStrictEqual(sum(-2,-4,1),[-9]);
   });
   it('should incriment by the given value if the ranges are in ascending order', function() {
-    assert.strictEqual(sum(2,8,2),20);
+    assert.deepStrictEqual(sum(2,8,2),[20]);
   });
   it('should decriment by the given value if the ranges are in descending order', function() {
-    assert.strictEqual(sum(8,2,2),20);
+    assert.deepStrictEqual(sum(8,2,2),[20]);
   });
 });
 

@@ -5,7 +5,7 @@ const sum = function(start, end, incriment) {
   for(let curNum = rangeStart; curNum <= rangeEnd; curNum += incriment) {
     sum = sum + curNum;
   }
-  return sum;
+  return [sum];
 };
 
 const isGreaterAndEqual = function(threshold, element) {
@@ -40,11 +40,12 @@ const isPrime = function(num) {
 };
 
 const prime = function(start, end) {
-  let primes = [],i; 
-  if(!(start > end || (start < 0 && end < 0))) {
-    let numbers = Array.from(Array(end), (_,i) => i+1).slice(2);
+  let primes = [],numbers = []; 
+  if((start <= end || (start >= 0 && end >= 0))) {
+    for(let i = start; i<=end; i++) {
+      numbers.push(i);
+    } 
     primes = numbers.filter(isPrime);
-    primes.unshift(2);
     primes = primes.filter(isGreaterAndEqual.bind(null,start));
   }
   return primes;
