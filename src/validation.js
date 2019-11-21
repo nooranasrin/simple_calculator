@@ -3,8 +3,8 @@ const isLengthValid = function(length) {
 };
 
 const isOperationValid = function(cmdLineOperation) {
-  const operation = {operations : ['sum', 'prime', 'fibnacci']};
-  return operation['operations'].includes(cmdLineOperation);
+  const operation = { operations: ["sum", "prime", "fibnacci"] };
+  return operation["operations"].includes(cmdLineOperation);
 };
 
 const isANumber = function(num) {

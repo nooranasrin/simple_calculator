@@ -1,0 +1,19 @@
+{
+  "name": "calculatorassignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "calculator.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "nyc mocha",
+    "start": "node calculator.js sum 1 10",
+    "prettify": "prettier --write src/*"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^3.0.0"
+  }
+}
